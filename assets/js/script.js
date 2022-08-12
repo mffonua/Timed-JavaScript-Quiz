@@ -57,3 +57,60 @@ function nextQuestion() {//serves up each question
         endQuiz();
         return false;
     }
+    yourScoreEl.textContent = "Your score: " + scoreCount;
+
+    feedbackH2El.classList.add("hide");
+
+    questionTxtEl.innerHTML = questions[questionCount].question;
+    for (i = 1; i <= 4; i++) {
+        var optionBtn = questionAnswerEl.querySelector(".btn:nth-child(" + i + ")");
+        var btnAnswer = questions[questionCount].answers[i - 1];
+
+       
+        optionBtn.disabled = false;
+
+        optionBtn.textContent = btnAnswer.choice;
+
+        if (optionBtn.classList.contains("true")) {
+            optionBtn.classList.remove("true");
+        }
+       
+        if (optionBtn.classList.contains("false")) {
+            optionBtn.classList.remove("false");
+        }
+       
+        if (optionBtn.classList.contains("green")) {
+            optionBtn.classList.remove("green");
+        }
+        if (feedbackH2El.classList.contains("green")) {
+            feedbackH2El.classList.remove("green");
+        }
+       
+        if (optionBtn.classList.contains("red")) {
+            optionBtn.classList.remove("red");
+        }
+        if (feedbackH2El.classList.contains("red")) {
+            feedbackH2El.classList.remove("red");
+        }
+
+        optionBtn.classList.add(btnAnswer.correct);
+
+        if (godModeSelected) {
+            if (btnAnswer.correct) {
+                optionBtn.classList.add("green");
+            } else {
+                optionBtn.classList.add("red");
+            }
+        }
+
+        //Used .invisible instead of .hide to make box size more uniform
+        if (btnAnswer.choice == "invisible") {
+            optionBtn.classList.add(btnAnswer.choice);
+        } else {//Removing invisible when it's no longer needed.
+            if (optionBtn.classList.contains("invisible")) {
+                optionBtn.classList.remove("invisible");
+            }
+        }
+    }
+    questionCount++;
+}
