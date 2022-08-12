@@ -27,3 +27,33 @@ var timeRemaining = 90;
 
 var gameFinished; //Stops the timer if user finished before time is out. 
 var godModeSelected; //Checks if God Mode is selected
+
+function countdown() {
+    timeInterval = setInterval(function () {
+        if (gameFinished) {
+            clearInterval(timeInterval);
+        } else if (timeRemaining >= 0) {
+            timeEl.textContent = "Seconds remaining: " + timeRemaining;
+            timeRemaining--;
+        } else {
+            clearInterval(timeInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
+
+function startQuiz() {
+    startBtnEl.classList.add("hide");
+    introEl.classList.add("hide");
+    highScoresPEl.classList.add("hide");
+    questionContainerEl.classList.remove("hide");
+    yourScoreEl.classList.remove("hide");
+    timeEl.classList.remove("hide");
+    countdown();
+    nextQuestion();
+}
+function nextQuestion() {//serves up each question
+    if (questionCount >= questions.length) {
+        endQuiz();
+        return false;
+    }
