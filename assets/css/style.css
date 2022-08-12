@@ -1,0 +1,229 @@
+:root {
+    --primary-color: #c2ecec;
+    --secondary-color: #4390aa;
+    --tertiary-color: #20647c;
+    --fourth-color: #17dc17;
+    --fifth-color: #cf1f1f;
+    --sixth-color: #000000;
+    --bg-color: #273f48;
+  }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color) ;
+}
+/*styles the main card on the landing page*/
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigate {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 10px 5px;
+    justify-content: space-between;
+}
+
+
+
+.container h1,
+.container h2,
+.container h3,
+.container p,
+#question {
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.container h2 {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.container h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    border-bottom: 3px var(--sixth-color);
+}
+
+.container p {
+    font-size: 18px;
+    margin-top: 5px;
+    cursor: pointer;
+    color: var(--sixth-color);
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro p {
+    cursor: auto;
+}
+
+#question {
+    font-size: 24px;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    border: 1px solid var(--sixth-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    padding: 15px 10px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+}
+
+/*Buttons are made to look like normal, but be disabled.*/
+.btn:disabled {
+    color: var(--sixth-color);
+}
+
+.start-btn,
+.next-btn,
+.play-again-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This class allows the unused buttons to be hidden, but stops the quiz card from
+ changing sizes like would happen with .hide */
+.invisible {
+    visibility: hidden;
+}
+
+/* The following styles are for the high score card */
+li {
+    font-size: 1.5rem;
+}
+
+.score-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.form-group h4 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.save-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.data-entry {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.congrats {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.congrats input {
+    min-width: 40%;
+}
+
+.congrats p {
+    cursor: auto;
+    font-size: 24px;
+    padding-bottom: 15px;
+}
+
+.score-form input {
+    outline: none;
+    padding: 5px;
+    width: 30%;
+    font-size: 1.7rem;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+/* the following are utility classes*/
+.hide {
+    display: none;
+}
+
+.green {
+    background-color: var(--fourth-color);
+}
+
+/*Overrides the normal hover color for buttons to make god mode
+  a better experience*/
+.green:hover {
+    background-color: var(--fourth-color);
+}
+
+.red {
+    background-color: var(--fifth-color);
+}
+
+/*Overrides the normal hover color for buttons to make god mode
+  a better experience*/
+.red:hover {
+    background-color: var(--fifth-color);
+}
