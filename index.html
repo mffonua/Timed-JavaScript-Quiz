@@ -11,25 +11,57 @@
     <!--Beginning of Body : has 2 section elements -->
 
 <body>
-    <section>
-        <div>
-            <p>High Score</p>
-            <p></p>
-            <p>Seconds Remaining: 90</p>
+    <section id="game-main" class="container">
+        <div class="navigate">
+            <p id="check-high-scores">High Score</p>
+            <p id="your-score" class="hide"></p>
+            <p id="time-remaining" class="hide">Seconds Remaining: 90</p>
         </div>
-        <div>
+        <div id="intro" class="intro">
             <h1>JavaScript Timed Challenge</h1>
             <h2>Think you know JavaScript?? ... Lets See</h2>
             <h3>Direction<span id ="god-mode">s</span></h3>
-            <p>Click "Start Quiz" below to test your knowledge! But don't forget to keep an eye
+            <p>Hello User: <br>
+                Click "Start Quiz" below to test your knowledge! But don't forget to keep an eye
                 on the timer. Incorrect answers will subtract 10 seconds from the clock.
                 After the game, be sure to enter your initials to save your high score!
             </p>
         </div>
-
+        <div id="question-container" class="hide">
+            <div id="question"></div>
+            <div id="answer-buttons" class="btn-grid">
+                <button class="btn choice"></button>
+                <button class="btn choice"></button>
+                <button class="btn choice"></button>
+                <button class="btn choice"></button>
+            </div>
+        </div>
+        <h2 id="feedback" class="hide"></h2>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">Start Quiz</button>
+        </div>
     </section>
-    <section>
-
+    <section id = "game-scores" class="container hide">
+            <div id="score-board" class="hide">
+                <h1>High Scores</h1>
+                <h2 id="top-five">See the top five high scores listed below!</h2>
+                <ol id="score-list" class="score-list"></ol>
+            </div>
+            <div id="score-form" class="score-form">
+                <div class="form-group">
+                    <h4 id="score-text"></h4>
+                    <div id="congrats" class="congrats">
+                        <p>Congratulations, you're a high scorer!</p>
+                        <div class="data-entry">
+                            <input type="text" name="player-initials" placeholder="Enter initials" maxlength="3"/>
+                            <button id="save-score" class="btn save-btn" >Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="play-again" class="play-again">
+                <button id="play-again-btn" class="play-again-btn btn">Play Again</button>
+            </div>
     </section>
 
 
