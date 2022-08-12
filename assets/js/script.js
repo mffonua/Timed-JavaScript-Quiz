@@ -70,14 +70,19 @@ function nextQuestion() {//serves up each question
         optionBtn.disabled = false;
 
         optionBtn.textContent = btnAnswer.choice;
+        
+        //Removes leftover true class from past questions
 
         if (optionBtn.classList.contains("true")) {
             optionBtn.classList.remove("true");
         }
+
+        //Removes leftover false class from past questions
        
         if (optionBtn.classList.contains("false")) {
             optionBtn.classList.remove("false");
         }
+        //Removes leftover green class from past questions
        
         if (optionBtn.classList.contains("green")) {
             optionBtn.classList.remove("green");
@@ -85,6 +90,8 @@ function nextQuestion() {//serves up each question
         if (feedbackH2El.classList.contains("green")) {
             feedbackH2El.classList.remove("green");
         }
+
+        //Removes leftover red class from past questions
        
         if (optionBtn.classList.contains("red")) {
             optionBtn.classList.remove("red");
